@@ -73,7 +73,7 @@ export class SortablejsDirective implements OnInit, OnChanges, OnDestroy {
   ngOnChanges(changes: { [prop in keyof SortablejsDirective]: SimpleChange }) {
     const optionsChange: SimpleChange = changes.sortablejsOptions;
 
-    if (optionsChange && !optionsChange.isFirstChange()) {
+    if (this.sortableInstance && optionsChange && !optionsChange.isFirstChange()) {
       const previousOptions: Options = optionsChange.previousValue;
       const currentOptions: Options = optionsChange.currentValue;
 
